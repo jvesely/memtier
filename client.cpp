@@ -557,7 +557,7 @@ void client::create_request(void)
             assert(key != NULL);
             assert(keylen > 0);
             
-            keylen = 6; // FIXME const
+//            keylen = 6; // FIXME const
             benchmark_debug_log("GET key=[%.*s]\n", keylen, key);
             cmd_size = m_protocol->write_command_get(key, keylen, m_config->data_offset);
 
