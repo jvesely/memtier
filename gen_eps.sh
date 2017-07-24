@@ -26,7 +26,7 @@ set datafile separator ","
 
 plot \
 	'
-	echo "for [COL=2:4:2] '$1' u COL:COL+1:xtic(1) ti col(COL) fillstyle pattern COL / 2 + 1"
+	echo "for [COL=2:6:2] '$1' u COL:COL+1:xtic(1) ti col(COL) fillstyle pattern COL / 2 + 1"
 }
 BASE=`basename $1 .csv`
 OUT_FILE=$BASE.eps
