@@ -912,7 +912,7 @@ int main(int argc, char *argv[])
     unsigned int fds_needed = (cfg.threads * cfg.clients) + (cfg.threads * 10) + 10;
     if (fds_needed > rlim.rlim_cur) {
         if (fds_needed > rlim.rlim_max && getuid() != 0) {
-            benchmark_error_log("error: running the tool with this number of connections requires 'root' privilegs.\n");
+            benchmark_error_log("error: running the tool with this number(%u) of connections requires 'root' privilegs (rlim_max: %u).\n", fds_needed, rlim.rlim_max);
             exit(1);
         }
         rlim.rlim_cur = rlim.rlim_max = fds_needed;
